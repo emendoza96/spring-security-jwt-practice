@@ -21,7 +21,6 @@ public class UserService {
     public UserEntity createUser(UserEntity user) {
 
         String encodedPass = passwordEncoder.encode(user.getPassword());
-        System.err.println(encodedPass);
         user.setPassword(encodedPass);
 
         return userRepository.save(user);
